@@ -7,8 +7,12 @@ Caleb M. Hill
 Assistant Professor
 Department of Chemistry
 University of Wyoming
+caleb.hill@uwyo.edu
 
-This program is designed to extract spectra from "hyperspectral imaging" (HSI) data files. The expected input files are 2-dimensional arrays, with Nx*Ny points in the first dimension and Nz points in the second. Nx and Ny correspond to the number of spatial pixels in the x and y directions, with Nz corresponds to the number of wavelength values (i.e., the number of pixels along the long dimension of the employed CCD).
+This program is designed to extract spectra from "hyperspectral imaging" (HSI) data files. The expected input files are 2-dimensional arrays, with Nx*Ny points in the first dimension and Nz+1 points in the second. The first column should contain the x pixel number for each spectrum. 
+Nx: # of spatial pixels in the x-direction
+Ny: # of spatial pixels in the y-direction
+Nz: # of wavelength values (i.e., the number of pixels along the long dimension of the employed CCD)
 
 Data is extracted in a "point-and-click" fashion through a GUI. Two files are generated for each point: (1) the raw data containing the integrated spectra and (2) a background corrected spectrum. The size of the region of interest is set through an input prompt. The background correction is a simple subtraction based on the average spectrum of the pixels just outside the region of interest.
 """
